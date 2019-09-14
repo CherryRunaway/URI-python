@@ -1,22 +1,17 @@
 def main(): 
     n = int(input())
-    v = input().split(" ")
+    r = input().split(" ")
     li = []
     li2 = []
     i = int(0)
-    aux = int(1)
     
-    while i < len(v):
-      li.append(int(v[i]))
+    while i < len(r):
+      li.append(int(r[i]))
       i += 1
     
-    i = int(0)
-    
-    for i in range(0, len(li)):
-      if aux < len(li):
-        if int(li[i]) > int(li[aux]):
-          li2.append(int(aux))
-      aux += 1
+    for i in range(1, len(li)):
+        if int(li[i-1]) > int(li[i]):
+          li2.append(int(i))
     
     if li2 == []:
       print("0")
